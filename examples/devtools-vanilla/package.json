@@ -1,0 +1,21 @@
+{
+    "name": "store2-example-devtools-vanilla",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Minimal @supercat1337/store2-devtools example in plain HTML.",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "clean": "shx rm -rf dist"
+    },
+    "dependencies": {
+        "@supercat1337/store2": "^3.0.1",
+        "@supercat1337/store2-devtools": "^1.0.0"
+    },
+    "devDependencies": {
+        "shx": "^0.4.0",
+        "vite": "^6.0.0"
+    }
+}

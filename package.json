@@ -1,0 +1,29 @@
+{
+    "name": "store2-examples",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Runnable examples for the @supercat1337/store2 ecosystem.",
+    "author": "Albert Bazaleev",
+    "license": "MIT",
+    "type": "module",
+    "engines": {
+        "node": ">=22.0.0",
+        "npm": ">=10.0.0"
+    },
+    "workspaces": [
+        "examples/*"
+    ],
+    "scripts": {
+        "build": "npm run build --workspaces --if-present",
+        "clean": "npm run clean --workspaces --if-present",
+        "lint": "eslint examples/",
+        "lint:fix": "eslint examples/ --fix",
+        "format": "prettier --write \"examples/**/*.{js,html,css,md,json}\"",
+        "dev:devtools-vanilla": "npm run dev --workspace=examples/devtools-vanilla"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.12.0",
+        "prettier": "^3.4.0"
+    }
+}

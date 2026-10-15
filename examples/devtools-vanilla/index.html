@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>store2-devtools — vanilla example</title>
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    'Segoe UI',
+                    sans-serif;
+                max-width: 640px;
+                margin: 48px auto;
+                padding: 0 24px;
+                color: #1a1a1a;
+                background: #fafafa;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin: 0 0 8px;
+            }
+
+            .lead {
+                color: #555;
+                margin: 0 0 32px;
+            }
+
+            .state {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                padding: 20px;
+                background: #fff;
+                border: 1px solid #e5e5e5;
+                border-radius: 8px;
+                margin-bottom: 24px;
+            }
+
+            .state > div {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .state .label {
+                font-size: 12px;
+                color: #888;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .state .value {
+                font-size: 24px;
+                font-weight: 600;
+                font-variant-numeric: tabular-nums;
+            }
+
+            .controls {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                margin-bottom: 32px;
+            }
+
+            button {
+                padding: 10px 18px;
+                font-size: 14px;
+                font-family: inherit;
+                background: #1a1a1a;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #333;
+            }
+
+            button.secondary {
+                background: #fff;
+                color: #1a1a1a;
+                border: 1px solid #d5d5d5;
+            }
+
+            button.secondary:hover {
+                background: #f0f0f0;
+            }
+
+            .hint {
+                padding: 16px;
+                background: #eef6ff;
+                border-left: 3px solid #4a90e2;
+                border-radius: 4px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .hint code {
+                background: #d9e8f7;
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 13px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>store2-devtools — vanilla example</h1>
+        <p class="lead">
+            Click buttons below and watch actions appear in the Redux DevTools Extension.
+        </p>
+
+        <div class="state">
+            <div>
+                <span class="label">Count</span>
+                <span class="value" id="count">0</span>
+            </div>
+            <div>
+                <span class="label">Doubled</span>
+                <span class="value" id="doubled">0</span>
+            </div>
+            <div>
+                <span class="label">History</span>
+                <span class="value" id="history">1</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="inc">+1</button>
+            <button id="dec">−1</button>
+            <button id="add10">+10</button>
+            <button id="reset" class="secondary">Reset</button>
+        </div>
+
+        <div class="hint">
+            <strong>Open Redux DevTools.</strong>
+            Press <code>F12</code> → <em>Redux</em> tab. You'll see actions <code>@@INIT</code>,
+            <code>increment</code>, <code>decrement</code>, and <code>add 10</code>. Click any entry
+            to time-travel — the UI updates instantly.
+        </div>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

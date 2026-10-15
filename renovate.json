@@ -1,0 +1,19 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "packageRules": [
+        {
+            "description": "Group all @supercat1337 packages into one PR",
+            "matchPackageNames": ["@supercat1337/**"],
+            "groupName": "store2 packages"
+        },
+        {
+            "description": "Automerge patch-level updates of dev tooling",
+            "matchUpdateTypes": ["patch"],
+            "matchPackageNames": ["eslint", "prettier", "@eslint/js", "vite"],
+            "automerge": true
+        }
+    ],
+    "schedule": ["before 6am on monday"],
+    "timezone": "Europe/Belgrade"
+}
